@@ -1,0 +1,14 @@
+{
+  "server": {
+    "port": 3333,
+    "logRequests": true,
+    "logQueries": true,
+    "logTimings": false
+  },
+  "dbs": {
+    "local": {
+      "url": "mongodb://host.docker.internal:27017",
+      "db": "crosstrain_dev"
+    }
+  }
+}
