@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  grafana:
+    build:          
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+       - "./volumes/data:/var/lib/grafana"
+       - "./server/config:/grafana-plugins/oss-mongodb-grafana/dist/server/config"

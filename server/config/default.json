@@ -6,7 +6,7 @@
     "logTimings": false
   },
   "dbs": {
-    "local": {
+    "dev": {
       "url": "mongodb://host.docker.internal:27017",
       "db": "crosstrain_dev"
     }
