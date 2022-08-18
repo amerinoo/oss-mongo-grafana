@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # runs 2 commands simultaneously:
-npm run server --prefix $GF_PATHS_PLUGINS/mongodb-grafana & # your second application
+npm run server --prefix $GF_PATHS_PLUGINS/oss-mongodb-grafana & # your second application
 P2=$!
 /run.sh & # your first application
 P1=$!
