@@ -15,15 +15,16 @@ COPY --from=node /usr/local/bin /usr/local/bin
 # Add the source code to app
 COPY . .
 
+ADD ./custom-run.sh /custom-run.sh
 
 RUN apk update \
     && apk upgrade  \
     && npm install --force   \
     && npm run build  \
     && npm cache clean --force  \
-    && chmod +x custom-run.sh \
+    && chmod +x /custom-run.sh \
     && sed -i 's/;allow_loading_unsigned_plugins =.*/allow_loading_unsigned_plugins = oss-grafana-mongodb-datasource/g' $GF_PATHS_CONFIG
 
 EXPOSE 3000
 
-ENTRYPOINT ["./custom-run.sh"]
+ENTRYPOINT ["/custom-run.sh"]
